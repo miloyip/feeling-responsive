@@ -6,8 +6,9 @@
 	<title>{% if page.meta_title %}{{ page.meta_title }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 	<link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/assets/css/styles_feeling_responsive.css">
 	<script src="{{ site.url }}{{ site.baseurl }}/assets/js/modernizr.min.js"></script>
-	
+
   <script>
+  	document.getElementsByTagName("html")[0].setAttribute("class","wf-loading");
     WebFontConfig = {
       google: { families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin' ] }
     };
@@ -26,6 +27,30 @@
   <noscript>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7cVolkhov' rel='stylesheet' type='text/css'>
   </noscript>
+
+  <style type="text/css">
+  .wf-loading #navigation,
+  .wf-loading h1,
+  .wf-loading h2,
+  .wf-loading p,
+  .wf-loading li
+  {
+  	visibility: hidden;
+  }
+  .wf-inactive #navigation,
+  .wf-inactive h1,
+  .wf-inactive h2,
+  .wf-inactive p,
+  .wf-inactive li,
+  .wf-active #navigation,
+  .wf-active h1,
+  .wf-active h2,
+  .wf-active p,
+  .wf-active li
+  {
+  	opacity:1;
+  }
+  </style>
 
   {% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification}}" />{% endif %}
 	{% if site.bing_webmastertools_id %}<meta name="msvalidate.01" content="{{ site.bing_webmastertools_id }}" />{% endif %}
